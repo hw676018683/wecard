@@ -1,0 +1,7 @@
+<div class="content">
+    <%= image_tag person.picture_url(:normal) %>
+    <ul class="sh">
+      <li class="sh">姓名: <%= link_to person.name, person %> <%= link_to "删除", delete_person_path(person),class: "fuck" %></li>
+      <li class="sh">公司: <%= person.conpany %><a href="#" class="sht" id="1">二维码</a></li>
+    </ul>
+  </div>

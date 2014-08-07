@@ -1,0 +1,71 @@
+<div class="fsp"></div>
+<%= form_for(@person) do |f|%>
+
+<div class="st" style="padding:3%;">
+    <div class="head" id="1">
+        <p style="margin:1%;">
+            基本信息
+            <img id="im1" style="float:right" src="/assets/down.jpg"/>
+        </p>
+    </div>
+    <div id="content1" style="display:none">
+
+        <%= f.label '头像:' %>
+        <%= f.file_field :picture, class: "sw"%>
+
+        <%= f.label '公司:' %>
+        <%= f.text_field :conpany, class: "sw" %>
+
+        <%= f.label '职务:' %>
+        <%= f.text_field :job, class: "sw" %>
+
+        <%= f.label '姓名:' %>
+        <%= f.text_field :name, class: "sw"%>
+
+        <%= f.label 'email:' %>
+        <%= f.text_field :email, class: "sw" %>
+
+        <%= f.label '手机:' %>
+        <%= f.text_field :phone, class: "sw" %>
+
+        </div>
+</div>
+<div class="st" style="padding:3%;">
+    <div class="head" id="2">
+        <p style="margin:1%;">
+            网络通讯
+            <img id="im2" style="float:right" src="/assets/down.jpg"/>
+        </p>
+    </div>
+    <div  id="content2" style="display:none">
+
+        <%= f.label 'QQ:' %>
+        <%= f.text_field :qq, class: "sw" %>
+
+        <%= f.label '微信:' %>
+        <%= f.text_field :wechat_num, class: "sw" %>
+
+        <%= f.label 'skype' %>
+        <%= f.text_field :skype, class: "sw" %>
+
+        <%= f.label 'MSN:' %>
+        <%= f.text_field :MSN, class: "sw" %>
+    </div>
+</div>
+<div class="st" style="padding:3%;">
+    <div class="head" id="3">
+        <p style="margin:1%;">
+            地址信息
+            <img id="im3" style="float:right" src="/assets/down.jpg"/>
+        </p>
+    </div>
+    <div id="content3" style="display:none">
+        <%= f.label '公司地址:', class: "un" %>
+        <%= f.text_field :location %>
+
+        <%= f.label '个人住址:', class: "un" %>
+        <%= f.text_field :address %></div>
+</div>
+
+<%= f.button "保存" %>
+<% end %>

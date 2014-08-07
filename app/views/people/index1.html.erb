@@ -1,0 +1,36 @@
+<table>
+<tr>
+<td> # </td>
+<td> Name </td>
+</tr>
+<tr>
+<td> </td>
+<% if !@person.nil? %>
+<td> <%= image_tag(@person.picture_url(:normal),id: 'iml') if @person.picture %></td>
+<td> <%= @person.name %></td>
+<% end %>
+</tr>
+</table>
+
+<%= link_to("Mycard",person_path(@person)) %>
+<%= link_to("Logout",destroy_user_session_path, :method => :delete ) %>
+<br>
+<br>
+Shared Cards
+<table>
+<tr>
+<td> # </td>
+<td> Name </td>
+<td> Wechat-Number </td>
+</tr>
+<% if !@shared_people.nil?  %>
+<% @shared_people.each do |person| %>
+<tr>
+<td></td>
+<td> <%= link_to(person.name,person) %></td>
+<td> <%= person.wechat_num %></td>
+<td> <%= link_to("Delete",delete_person_path(person)) %></td>
+</tr>
+<% end %>
+<% end %>
+</table>

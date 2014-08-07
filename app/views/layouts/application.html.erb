@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WeCard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" />  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' =>
+  true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' =>
+  true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="ftp">
+    <img src="/assets/2.jpg" class:"but" height="30" width="30">
+    <p>我的名片</p>
+    <% if current_user %>
+      <%= link_to image_tag("名片夹1.jpg", class: "but"), list_person_path(current_user), id: "card" %>
+      <%= link_to image_tag("我的名片1.jpg", class: "but"), root_path, id: "holder" %>
+    <% end %>
+  </div>
+  </div>
+  <%= flash[:error] %>
+  <%= yield %>
+  <p class="notice">
+    <%= notice %></p>
+  <p class="alert">
+    <%= alert %></p>
+</body>
+</html>

@@ -1,0 +1,2 @@
+class SharedPeopleController < ApplicationController
+end

@@ -1,0 +1,15 @@
+<div class="fsp"></div>
+<div id="show">
+	<%= render "person_form" %>
+	<button id="share" onclick=aa(<%= @person.id.to_s %>)>分享</button>
+</div>
+
+<div class="mask"></div>
+<div class="dialog">
+	<div class="title">
+		<img class="ui" id="close" src="assets/close.jpg" height="25" width="25">
+		<p style="margin:0;">我的二维码</p>
+		</div>
+	
+<%= image_tag "http://api.k780.com:88/?app=qr.get&level=L&size=4&data=http://192.168.199.119:3000/people/"+@person.id.to_s,class: "us" %>
+</div>

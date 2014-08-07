@@ -1,0 +1,56 @@
+<div class="st">
+  <%= image_tag @person.picture_url(:normal), class: "show"%>
+  <% if current_user %>
+    <% if  current_user.person == @person %>
+      <%= link_to "编辑", edit_person_path(@person), class: "ae" %>
+    <% elsif !current_user.person.shared_people.find_by(shared_id: @person.id) %>
+      <%= link_to "收藏", collect_person_path(@person), class: "ae"  %>
+    <% end %>
+  <%else %>
+    <%= link_to "收藏", collect_person_path(@person), class: "ae"  %>
+  <% end %>
+  <ul class="base">
+    <li class="base" id="name">
+      姓名:
+      <%= @person.name%></li>
+    <li class="cj" id="job" >
+      公司:
+      <%= @person.conpany %>
+      <a href="#" id="two" class="fr">二维码</a>
+    </li>
+  </ul>
+  <ul class="extend">
+    <li class="extend" id="手机">
+      职务:
+      <%= @person.job %></li>
+    <li class="extend" id="手机">
+      手机:
+      <%= @person.phone %></li>
+    <li class="extend" id="email">
+      邮箱:
+      <%= @person.email %></li>
+    <li class="extend" id="qq">
+      QQ:
+      <%= @person.qq %></li>
+
+    <li class="extend" id="qq">
+      Skype:
+      <%= @person.skype %></li>
+
+    <li class="extend" id="qq">
+      Msn:
+      <%= @person.MSN %></li>
+
+    <li class="extend" id="weixin">
+      微信:
+      <%= @person.wechat_num %></li>
+
+    <li class="extend" id="weixin">
+      公司地址:
+      <%= @person.location %></li>
+
+    <li class="extend" id="cad">
+      个人住址:
+      <%= @person.address %></li>
+  </ul>
+</div>
