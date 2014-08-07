@@ -45,8 +45,8 @@ body {background-color:#dddddd; }
 
       div.content {border:1px solid #000;border-radius:5px;height:20%;width:95%;padding:1%;float:left;margin: 1%}
     .content img {max-height: 65%;float:left;}
-    ul.sh {list-style:none;width:80%;margin:1%;margin-left: 10%;float;}
-    li.sh {text-align: left;font-size: 1.05em;margin:3%;}
+    ul.sh {list-style:none;width:80%;margin:1%;margin-left: 10%;}
+    li.sh {text-align:left;font-size: 1.05em;margin:3%;}
     a.sht {float:right;margin-right: 5%;}
     a.fuck {float:right;margin-right: 5%;}
      div.dialog {height:40%;width:60%;border:solid 2px #ddd;border-radius: 5px;position: absolute;top:25%;left:20%;background-color:#fff;display: none; }
