@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="ftp">
-    <img src="/assets/2.jpg" class:"but" height="30" width="30">
+    <%= image_tag("2.jpg", height: "30", width: "30") %>
     <p>我的名片</p>
     <% if current_user %>
       <%= link_to image_tag("名片夹1.jpg", class: "but"), list_person_path(current_user), id: "card" %>

@@ -51,10 +51,12 @@ class PeopleController < ApplicationController
 
 	def list
 		@persons = []
-		@person_ids = current_user.person.shared_people
-		@person_ids.each do |id|
-			@person = Person.find(id.shared_id)
-			@persons << @person
+		if !current_user.person.shared_people.nil?
+			@person_ids = current_user.person.shared_people
+			@person_ids.each do |id|
+				@person = Person.find(id.shared_id)
+				@persons << @person
+			end
 		end
 	end
 

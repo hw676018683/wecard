@@ -49,14 +49,7 @@ function aa(str){
   alert("Url:192.168.199.119:3000/people/"+str);
 }
 $(function(){
-        $("#card").click(function(){
-          $("#card").attr("src","/assets/我的名片2.jpg");
-          $("#holder").attr("src","/assets/名片夹1.jpg");
-        });
-        $("#holder").click(function(){
-          $("#card").attr("src","/assets/我的名片1.jpg");
-          $("#holder").attr("src","/assets/名片夹2.jpg");
-        });
+        
         $(".sht").click(function(e){
           $srcm="model"+this.id;
           $(".us").attr("src","./image/"+$srcm+".jpg");
