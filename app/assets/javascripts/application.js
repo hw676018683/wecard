@@ -13,3 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+function aa(str){
+  alert("Url:dry-cliffs-4326.herokuapp.com/people/"+str);
+}
+$(function(){
+        
+        $(".sht").click(function(e){
+          $srcm=this.id;
+          $(".us").attr("src","http://api.k780.com:88/?app=qr.get&level=L&size=4&data=http://dry-cliffs-4326.herokuapp.com/people/"+$srcm);
+          $(".dialog").show();
+          $(".mask").show();
+          e.stopPropagation();
+        });
+        $("#close").click(function(){
+          $(".dialog").hide();
+          $(".mask").hide();
+        });
+
+        // $(".content").click(function(){
+        //   $srcm="src-mode"+this.id;
+        //   window.location.href=$srcm+".html";
+        // });
+      })
