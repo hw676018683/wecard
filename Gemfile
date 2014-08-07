@@ -48,7 +48,7 @@ gem 'devise'
 
 
 gem 'faker'
-gem 'capybara-webkit', '1.1.0'
+
 
 gem 'carrierwave'
 gem 'mini_magick'
