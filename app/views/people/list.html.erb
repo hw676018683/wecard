@@ -1,5 +1,9 @@
 <div class="fsp"></div>
-  <%= render @persons %>
+  <% if @persons.blank? %>
+    <h4> 你没有收藏任何人。</h4>
+  <% else %>
+    <%= render @persons %>
+  <% end %>
   <div class="mask"></div>
   <div class="dialog">
     <div class="title">
