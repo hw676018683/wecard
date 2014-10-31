@@ -1,3 +1,4 @@
+<% cache @person do %>
 <div class="st">
   <%= image_tag @person.picture_url(:normal), class: "show"%>
   <% if current_user %>
@@ -54,3 +55,4 @@
       <%= @person.address %></li>
   </ul>
 </div>
+<% end %>

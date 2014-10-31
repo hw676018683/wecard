@@ -4,7 +4,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-   include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -66,5 +66,12 @@ class PictureUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def filename
+    random_token = Digest::SHA2.hexdigest("#{Time.now.utc}--#{rand(999999)}").first(20)
+    ivar = "@#{mounted_as}_secure_token"    
+    token = model.instance_variable_get(ivar)
+    token ||= model.instance_variable_set(ivar, random_token)
+    "#{token}.jpg" if original_filename
+  end
 
 end
